@@ -202,9 +202,38 @@ mysql> select count(salary) from Employee_Payroll Where gender = 'F' group by ge
 1 row in set (0.00 sec)
 
 
+********************** UC8 *******************************
 
+mysql> ALTER TABLE Employee_Payroll ADD phone_number VARCHAR(250) AFTER name;
+Query OK, 0 rows affected (5.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
+mysql> ALTER TABLE Employee_Payroll ADD address VARCHAR(250) AFTER phone_number;
+Query OK, 0 rows affected (3.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
+mysql> ALTER TABLE Employee_Payroll ADD department VARCHAR(250) AFTER address;
+Query OK, 0 rows affected (15.71 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Employee_Payroll ALTER address SET DEFAULT 'TBD';
+Query OK, 0 rows affected (0.53 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Employee_Payroll;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | int          | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(50)  | NO   |     | NULL    |                |
+| phone_number | varchar(250) | YES  |     | NULL    |                |
+| address      | varchar(250) | YES  |     | TBD     |                |
+| department   | varchar(250) | YES  |     | NULL    |                |
+| salary       | double       | NO   |     | NULL    |                |
+| StartDate    | date         | NO   |     | NULL    |                |
+| gender       | char(1)      | NO   |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+8 rows in set (4.27 sec)
 
 
 
