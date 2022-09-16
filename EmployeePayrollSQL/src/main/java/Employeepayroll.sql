@@ -236,9 +236,37 @@ mysql> DESCRIBE Employee_Payroll;
 8 rows in set (4.27 sec)
 
 
+************************** UC9 *********************************
 
+mysql> ALTER TABLE Employee_Payroll RENAME COLUMN salary TO basic_pay;
+Query OK, 0 rows affected (0.74 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
+mysql> ALTER TABLE Employee_Payroll ADD deductions Double NOT NULL AFTER basic_pay;
+Query OK, 0 rows affected (2.87 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
+mysql> ALTER TABLE Employee_Payroll ADD taxable_pay Double NOT NULL AFTER deductions;
+Query OK, 0 rows affected (2.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Employee_Payroll ADD tax Double NOT NULL AFTER taxable_pay;
+Query OK, 0 rows affected (4.65 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Employee_Payroll ADD net_pay Double NOT NULL AFTER tax;
+Query OK, 0 rows affected (2.56 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from Employee_Payroll;
++----+---------+--------------+---------+------------+-----------+------------+-------------+-----+---------+------------+--------+
+| id | name    | phone_number | address | department | basic_pay | deductions | taxable_pay | tax | net_pay | StartDate  | gender |
++----+---------+--------------+---------+------------+-----------+------------+-------------+-----+---------+------------+--------+
+|  1 | Divakar | NULL         | NULL    | NULL       |     55000 |          0 |           0 |   0 |       0 | 2021-03-31 | M      |
+|  2 | anil    | NULL         | NULL    | NULL       |     50000 |          0 |           0 |   0 |       0 | 2020-04-11 | M      |
+|  3 | Abinav  | NULL         | NULL    | NULL       |     90000 |          0 |           0 |   0 |       0 | 2022-02-18 | F      |
++----+---------+--------------+---------+------------+-----------+------------+-------------+-----+---------+------------+--------+
+3 rows in set (0.02 sec)
 
 
 
