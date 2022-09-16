@@ -143,9 +143,63 @@ mysql> select * from Employee_Payroll;
 3 rows in set (0.00 sec)
 
 
+*************** UC7 ********************************************
 
+mysql> select sum(salary) from Employee_Payroll Where gender = 'M' group by gender;
++-------------+
+| sum(salary) |
++-------------+
+|      105000 |
++-------------+
+1 row in set (0.10 sec)
 
+mysql> select sum(salary) from Employee_Payroll Where gender = 'F' group by gender;
++-------------+
+| sum(salary) |
++-------------+
+|       90000 |
++-------------+
+1 row in set (0.00 sec)
 
+mysql> select avg(salary) from Employee_Payroll Where gender = 'M' group by gender;
++-------------+
+| avg(salary) |
++-------------+
+|       52500 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select min(salary) from Employee_Payroll Where gender = 'M' group by gender;
++-------------+
+| min(salary) |
++-------------+
+|       50000 |
++-------------+
+1 row in set (0.06 sec)
+
+mysql> select max(salary) from Employee_Payroll Where gender = 'M' group by gender;
++-------------+
+| max(salary) |
++-------------+
+|       55000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(salary) from Employee_Payroll Where gender = 'M' group by gender;
++---------------+
+| count(salary) |
++---------------+
+|             2 |
++---------------+
+1 row in set (0.02 sec)
+
+mysql> select count(salary) from Employee_Payroll Where gender = 'F' group by gender;
++---------------+
+| count(salary) |
++---------------+
+|             1 |
++---------------+
+1 row in set (0.00 sec)
 
 
 
