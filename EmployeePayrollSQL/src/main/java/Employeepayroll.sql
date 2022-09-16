@@ -78,6 +78,36 @@ mysql> select * from Employee_Payroll;
 +----+---------+--------+------------+
 3 rows in set (2.08 sec)
 
+************* UC5 ***********************************
+
+
+
+mysql> SELECT salary FROM Employee_Payroll WHERE name = 'divakar';
++--------+
+| salary |
++--------+
+|  55000 |
++--------+
+1 row in set (1.35 sec)
+
+mysql> SELECT salary FROM Employee_Payroll WHERE StartDate BETWEEN CAST('2018-01-01' AS DATE) AND DATE(NOW());
++--------+
+| salary |
++--------+
+|  55000 |
+|  50000 |
+|  90000 |
++--------+
+3 rows in set (1.57 sec)
+
+
+
+
+
+
+
+
+
 
 
 
