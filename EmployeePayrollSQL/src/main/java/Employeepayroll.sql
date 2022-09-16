@@ -31,3 +31,26 @@ mysql> show databases;
 mysql> use payroll_services;
 Database changed
 
+
+******************** UC2 *************
+
+
+mysql> CREATE TABLE Employee_Payroll
+    -> (id int not null auto_increment,
+    -> name varchar(50) not null,
+    -> salary Double not null,
+    -> StartDate Date not null,
+    -> primary key(id)
+    -> );
+Query OK, 0 rows affected (36.24 sec)
+
+mysql> DESCRIBE Employee_Payroll;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int         | NO   | PRI | NULL    | auto_increment |
+| name      | varchar(50) | NO   |     | NULL    |                |
+| salary    | double      | NO   |     | NULL    |                |
+| StartDate | date        | NO   |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+4 rows in set (6.56 sec)
