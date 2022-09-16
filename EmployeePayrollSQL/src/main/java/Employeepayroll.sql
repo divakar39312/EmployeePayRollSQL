@@ -101,9 +101,46 @@ mysql> SELECT salary FROM Employee_Payroll WHERE StartDate BETWEEN CAST('2018-01
 3 rows in set (1.57 sec)
 
 
+******************* UC6 *********************
 
 
+mysql> ALTER TABLE Employee_Payroll ADD gender char(1) NOT NULL;
+Query OK, 0 rows affected (12.56 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
+mysql> DESCRIBE Employee_Payroll;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int         | NO   | PRI | NULL    | auto_increment |
+| name      | varchar(50) | NO   |     | NULL    |                |
+| salary    | double      | NO   |     | NULL    |                |
+| StartDate | date        | NO   |     | NULL    |                |
+| gender    | char(1)     | NO   |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+5 rows in set (0.98 sec)
+
+mysql> UPDATE Employee_Payroll SET gender = 'M' WHERE name = 'Divakar';
+Query OK, 1 row affected (0.31 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE Employee_Payroll SET gender = 'M' WHERE name = 'anil';
+Query OK, 1 row affected (0.67 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE Employee_Payroll SET gender = 'F' WHERE name = 'Abinav';
+Query OK, 1 row affected (0.61 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Employee_Payroll;
++----+---------+--------+------------+--------+
+| id | name    | salary | StartDate  | gender |
++----+---------+--------+------------+--------+
+|  1 | Divakar |  55000 | 2021-03-31 | M      |
+|  2 | anil    |  50000 | 2020-04-11 | M      |
+|  3 | Abinav  |  90000 | 2022-02-18 | F      |
++----+---------+--------+------------+--------+
+3 rows in set (0.00 sec)
 
 
 
