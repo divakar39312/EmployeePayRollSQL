@@ -269,6 +269,24 @@ mysql> select * from Employee_Payroll;
 3 rows in set (0.02 sec)
 
 
+*********************** UC10 **************************************
 
 
+mysql> INSERT INTO Employee_Payroll (id,name,phone_number,address,department,basic_pay,deductions,taxable_pay,tax,net_pay,StartDate,gender) VALUES
+    -> (4, 'Terissa', 7846821730, 'Amberpet', 'Sales', 45000, 2000, 1500, 5000, 50000, '2022-05-30','F'),
+    -> (5, 'Terissa', 7846821730, 'Amberpet', 'Marketing', 45000, 2000, 1500, 5000, 50000, '2022-05-30','F');
+Query OK, 2 rows affected (0.74 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM Employee_Payroll;
++----+---------+--------------+----------+------------+-----------+------------+-------------+------+---------+------------+--------+
+| id | name    | phone_number | address  | department | basic_pay | deductions | taxable_pay | tax  | net_pay | StartDate  | gender |
++----+---------+--------------+----------+------------+-----------+------------+-------------+------+---------+------------+--------+
+|  1 | Divakar | NULL         | NULL     | NULL       |     55000 |          0 |           0 |    0 |       0 | 2021-03-31 | M      |
+|  2 | anil    | NULL         | NULL     | NULL       |     50000 |          0 |           0 |    0 |       0 | 2020-04-11 | M      |
+|  3 | Abinav  | NULL         | NULL     | NULL       |     90000 |          0 |           0 |    0 |       0 | 2022-02-18 | F      |
+|  4 | Terissa | 7846821730   | Amberpet | Sales      |     45000 |       2000 |        1500 | 5000 |   50000 | 2022-05-30 | F      |
+|  5 | Terissa | 7846821730   | Amberpet | Marketing  |     45000 |       2000 |        1500 | 5000 |   50000 | 2022-05-30 | F      |
++----+---------+--------------+----------+------------+-----------+------------+-------------+------+---------+------------+--------+
+5 rows in set (0.02 sec)
 
