@@ -54,3 +54,35 @@ mysql> DESCRIBE Employee_Payroll;
 | StartDate | date        | NO   |     | NULL    |                |
 +-----------+-------------+------+-----+---------+----------------+
 4 rows in set (6.56 sec)
+
+
+
+************** UC3 *********************
+
+mysql> INSERT INTO Employee_Payroll (name,salary,StartDate) VALUES
+    -> ('Divakar',55000,'2021-03-31'),
+    -> ('anil',50000,'2020-04-11'),
+    -> ('Abinav',90000,'2022-02-18');
+Query OK, 3 rows affected (12.25 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
